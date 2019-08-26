@@ -20,7 +20,7 @@ export class PlaceDetailPage implements OnInit {
     ) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe(paramMap =>{
+    this.route.paramMap.subscribe(paramMap => {
       if (!paramMap.has('placeId')) {
         this.navCtrl.navigateBack('/places/tabs/discover');
         return;
@@ -30,7 +30,7 @@ export class PlaceDetailPage implements OnInit {
   }
   onBookPlace() {
     // this.router.navigateByUrl('/places/tabs/discover');
-    //this.navCtrl.navigateBack('/places/tabs/discover');
+    // this.navCtrl.navigateBack('/places/tabs/discover');
    // this.navCtrl.pop();
    this.modalCtrl
     .create({
@@ -42,7 +42,7 @@ export class PlaceDetailPage implements OnInit {
       return modalEl.onDidDismiss();
     })
     .then(resultData => {
-      console.log(resultData.data,resultData.role );
+      console.log(resultData.data, resultData.role );
       if (resultData.role === 'confirm') {
         console.log('BOOKED!');
       }
